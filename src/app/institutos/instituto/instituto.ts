@@ -1,4 +1,3 @@
-import { Instituto } from './../../../../../01-intro-TS/src/ejercicios/ejercicio9.1';
 import { Component } from '@angular/core';
 
 export class Insti {

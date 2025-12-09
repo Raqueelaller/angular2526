@@ -6,11 +6,13 @@
     "start": "ng serve",
     "build": "ng build",
     "build:href": "ng build --base-href ./",
-    "build:github": "npm run build:href && npm run delete:docs && npm run copy:dist",
+    "build:github": "ng build --base-href /02-bases-angular/ && npm run delete:docs && npm run copy:dist && npm run create:nojekyll",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "delete:docs": "del docs",
-    "copy:dist": "copyfiles dist/02-bases-angular/browser/* ./docs/ -f"
+    "copy:dist": "copyfiles -u dist/02-bases-angular/browser/* ./docs/ -f",
+    "create:nojekyll": "echo. > docs/.nojekyll",
+    "deploy": "npm run build:github && git add . && git commit -m \"Deploy to GitHub Pages\" && git push"
   },
   "prettier": {
     "printWidth": 100,
@@ -46,6 +48,7 @@
     "@types/jasmine": "~5.1.0",
     "copyfiles": "^2.4.1",
     "del-cli": "^7.0.0",
+    "http-server": "^14.1.1",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

@@ -6,7 +6,7 @@ import { MainPageComponent } from "./dbz/pages/main-page";
 import { DbzModule } from './dbz/dbz-module';
 @Component({
   selector: 'app-root',
-  imports: [ContadorModule, HeroesModule, InstitutoComponent, DbzModule],
+  imports: [ContadorModule, HeroesModule, DbzModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
