@@ -6,11 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "build:href": "ng build --base-href ./",
-    "build:github": "ng build --base-href /02-bases-angular/ && npm run delete:docs && npm run copy:dist && npm run create:nojekyll",
+    "build:github": "ng build --base-href /angular2526/ && npm run delete:docs && npm run copy:dist && npm run create:nojekyll",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "delete:docs": "del docs",
-    "copy:dist": "copyfiles -u dist/02-bases-angular/browser/* ./docs/ -f",
+    "copy:dist": "xcopy /E /I dist\\02-bases-angular\\browser\\*.* docs\\",
     "create:nojekyll": "echo. > docs/.nojekyll",
     "deploy": "npm run build:github && git add . && git commit -m \"Deploy to GitHub Pages\" && git push"
   },
